@@ -1,0 +1,37 @@
+.calculator {
+    padding-left: 50px;
+}
+
+.button {
+    padding: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.equal-button {
+    padding-left: 404px;
+    padding-right: 404px;
+}
+
+.operator-button {
+    padding: 40px;
+}
+
+.current-number {
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 412px;
+    text-align: justify;
+    border: 2px solid;
+    width: 412px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 200px); /* Create 3 equal-width columns */
+    gap: 10px;
+}
