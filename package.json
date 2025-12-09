@@ -1,0 +1,25 @@
+{
+  "name": "calculator-project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Started off as the first Mavericks Onboarding project",
+  "exports": "./scripts/calculator.js",
+  "scripts": {
+    "test": "vitest --run --environment happy-dom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azurenity/calculator-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azurenity/calculator-project/issues"
+  },
+  "homepage": "https://github.com/azurenity/calculator-project#readme",
+  "devDependencies": {
+    "happy-dom": "^20.0.11",
+    "vitest": "^4.0.15"
+  }
+}

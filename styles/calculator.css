@@ -1,37 +1,66 @@
 .calculator {
-    padding-left: 50px;
+  max-width: 840px; /* Width of your grid + gaps */
+  margin: 200px auto 0 auto; /* 200px top margin, auto left/right for centering */
+  padding: 0 20px; /* Optional: small padding for mobile screens */
+  border: 2px solid;
+  background-color: black;
+  border-radius: 20px;
 }
 
 .button {
-    padding: 40px;
-    margin-left: 10px;
-    margin-top: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
+  padding: 40px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: Arial;
 }
 
 .equal-button {
-    padding-left: 404px;
-    padding-right: 404px;
+  padding: 40px;
+  padding-left: 414px;
+  padding-right: 414px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 10px;
 }
 
 .operator-button {
-    padding: 40px;
+  padding: 40px;
 }
 
 .current-number {
-    font-size: 25px;
-    font-weight: bold;
-    padding-left: 412px;
-    text-align: justify;
-    border: 2px solid;
-    width: 412px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: right;
+  border: 2px solid;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: antiquewhite;
+  font-family: Arial;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 200px); /* Create 3 equal-width columns */
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Equal columns */
+  gap: 10px; /* This creates spacing between buttons */
+}
+
+.log-title {
+    text-decoration: underline;
+    font-size: 20px;
+    text-align: center;
+}
+
+.log {
+    text-align: center;
+}
+
+.log-element {
+    list-style-type: none;
 }
