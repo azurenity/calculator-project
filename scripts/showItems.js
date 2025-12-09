@@ -1,6 +1,6 @@
-const numberDisplay = document.querySelector(".current-number-js")
+export const numberDisplay = document.querySelector(".current-number-js")
 
-export function showNumber(currentNumber) {
+export function showNumber(currentNumber, numberDisplay) {
     if (currentNumber === "") {
         numberDisplay.innerHTML = 0
     } else if (currentNumber.endsWith(".")) {

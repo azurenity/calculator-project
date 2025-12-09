@@ -1,4 +1,5 @@
 import { it, expect, vi } from "vitest";
+import { showNumber } from "./showItems";
 import fs from 'fs';
 import path from 'path';
 
@@ -11,12 +12,13 @@ document.write(htmlDocumentContent);
 
 vi.stubGlobal('document', document)
 
-it('should display the negative sign when the negative sign is clicked before a number', () => {
-    const button = document.querySelector('.negative-button-js')
+const numberDisplay = document.querySelector(".current-number-js")
 
-    button.click();
-    
-    const currentNumberElement = document.querySelector('.current-number-js')
+it('should round off the numbers if there is more than 1dp', () => {
+    const result = String(1 / 3)
+    const expectedResult = String(0.3)
+    showNumber(result,numberDisplay)
 
-    expect(currentNumberElement.innerHTML).toBe('-')
+    expect(numberDisplay.innerHTML).toBe(expectedResult);
 });
+

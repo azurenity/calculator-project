@@ -3,7 +3,7 @@ import multiply from "./multiplication.js"
 import subtract from "./subtraction.js"
 import add from "./addition.js"
 import { updateLog, showLog } from "./log.js"
-import { showNumber, showError } from "./showItems.js"
+import { showNumber, showError, numberDisplay } from "./showItems.js"
 
 let firstNumber = 0
 let secondNumber = 0
@@ -15,7 +15,7 @@ const clearButtonElement = document.querySelector('.clear-button-js')
 
 clearButtonElement.addEventListener('click', () => {
     currentNumber = ""
-    showNumber(currentNumber)
+    showNumber(currentNumber, numberDisplay)
     console.log(`cleared, number is reset`)
 }) 
 
@@ -23,7 +23,7 @@ const equalButtonElement = document.querySelector('.equal-button-js')
 
 equalButtonElement.addEventListener('click', () => {
     if (operator === "") {
-        showNumber(currentNumber)
+        showNumber(currentNumber, numberDisplay)
         return
     } else if (ranOnce !== true) {
         secondNumber = Number(currentNumber)
@@ -47,32 +47,30 @@ equalButtonElement.addEventListener('click', () => {
     updateLog(firstNumber, operator, secondNumber, result)
     showLog()
     firstNumber = result
-    showNumber(currentNumber)
+    showNumber(currentNumber, numberDisplay)
     currentNumber = ""
 }) 
 
-showNumber(currentNumber)
+showNumber(currentNumber, numberDisplay)
 
 const numberButtonsElement = document.querySelectorAll('.number-button-js')
 
 numberButtonsElement.forEach(button => {
     button.addEventListener('click', (e) => {
         let numberPressed = e.currentTarget.innerHTML
-        console.log(currentNumber)
-        console.log(ranOnce)
         if (currentNumber === "") {
             if (numberPressed === "0") {
                 return
             } 
         } else if (ranOnce === true) {
             currentNumber = numberPressed
-            showNumber(currentNumber)
+            showNumber(currentNumber, numberDisplay)
             ranOnce = false
             operator = ""
             return
         }
         currentNumber = currentNumber + numberPressed
-        showNumber(currentNumber)
+        showNumber(currentNumber, numberDisplay)
     })
 })
 
@@ -81,20 +79,22 @@ const operatorButtonsElement = document.querySelectorAll('.operator-button-js')
 
 operatorButtonsElement.forEach(button => {
     button.addEventListener('click', (e) => { 
+        ranOnce = false
         operator = e.currentTarget.innerHTML
-        if (currentNumber === "") {
+        if (currentNumber === "" && firstNumber === 0) {
             if (operator === "-") {
                 currentNumber = '-'
                 operator = ""
-                ranOnce = false
-                showNumber(currentNumber)
+                showNumber(currentNumber, numberDisplay)
+                console.log(document.querySelector('.current-number-js').innerHTML)
                 return
             }
+        } else if (firstNumber === 0) {
+            firstNumber = Number(currentNumber)
+            console.log(currentNumber)
+            currentNumber = ""
         }
-        ranOnce = false
-        firstNumber = Number(currentNumber)
-        console.log(currentNumber)
-        currentNumber = ""
+        console.log(firstNumber)
     })
 })
 
