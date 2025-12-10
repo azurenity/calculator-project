@@ -1,66 +1,131 @@
 .calculator {
-  max-width: 840px; /* Width of your grid + gaps */
-  margin: 200px auto 0 auto; /* 200px top margin, auto left/right for centering */
+  min-width: 200px;
+  width: 50vw;
+  margin: 200px auto 25vw auto; /* 200px top margin, auto left/right for centering */
   padding: 0 20px; /* Optional: small padding for mobile screens */
   border: 2px solid;
   background-color: black;
   border-radius: 20px;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10px; 
+  margin-bottom: 10px;
+}
+
+.last-row {
+  grid-template-columns: 3.1fr 1fr;
+}
+
 .button {
-  padding: 40px;
-  font-size: 16px;
+  font-size: 100%;
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  margin-bottom: 10px;
   font-family: Arial;
 }
 
 .equal-button {
-  padding: 40px;
-  padding-left: 414px;
-  padding-right: 414px;
-  font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
   border-radius: 10px;
-}
-
-.operator-button {
-  padding: 40px;
+  background-color: orange;
 }
 
 .current-number {
-  font-size: 25px;
+  font-size: 100%;
   font-weight: bold;
   text-align: right;
   border: 2px solid;
   width: 100%;
   box-sizing: border-box;
-  padding: 20px;
-  margin-bottom: 10px;
+  padding: 2%;
   background-color: antiquewhite;
   font-family: Arial;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Equal columns */
-  gap: 10px; /* This creates spacing between buttons */
-}
-
 .log-title {
-    text-decoration: underline;
-    font-size: 20px;
-    text-align: center;
+  text-decoration: underline;
+  font-size: 20px;
+  text-align: center;
+  font-family: Arial;
 }
 
 .log {
-    text-align: center;
+  text-align: center;
+  font-family: Arial;
 }
 
 .log-element {
-    list-style-type: none;
+  list-style-type: none;
+}
+
+@media (min-width: 600px) {
+  .button {
+    padding: 20px;
+  }
+  .log-title {
+    font-size: 25px;
+  }
+  .log-element {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  .button {
+    padding: 40px;
+  }
+  .calculator {
+    border: 3px solid;
+  }
+  .current-number {
+    font-size: 20px;
+  }
+  .log-title {
+    font-size: 30px;
+  }
+  .log-element {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .button {
+    padding: 60px;
+  }
+  .calculator {
+    border: 4px solid;
+  }
+  .current-number {
+    font-size: 25px;
+  }
+  .log-title {
+    font-size: 40px;
+  }
+  .log-element {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .button {
+    padding: 80px;
+  }
+  .calculator {
+    border: 6px solid;
+  }
+  .current-number {
+    font-size: 30px;
+  }
+
+  .log-title {
+    font-size: 50px;
+  }
+  .log-element {
+    font-size: 40px;
+  }
 }
