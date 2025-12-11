@@ -12,7 +12,7 @@ jest.unstable_mockModule('./show-items.js', () => ({ // note that the path that 
     }) // mimics the behavior of the actual show division error but DOES NOT modify the DOM
 }));
 
-const { validateOperatorBtn, calculateResult, numberPressedLogic, validateNumber, validateEqualBtn } = await import('./format.js');
+const { validateOperatorBtn, calculateResult, numberPressedLogic, validateNumber, validateEqualBtn, formatCalculation } = await import('./format.js');
 
 describe("validateOperatorBtn()", () => {
     it('should allow the user to input a negative sign as the first value', () => {
