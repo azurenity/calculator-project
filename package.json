@@ -5,8 +5,7 @@
   "description": "Started off as the first Mavericks Onboarding project",
   "exports": "./scripts/calculator.js",
   "scripts": {
-    "start": "http-server calculator.html",
-    "test": "vitest --run --environment happy-dom"
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
   },
   "repository": {
     "type": "git",
@@ -20,8 +19,6 @@
   },
   "homepage": "https://github.com/azurenity/calculator-project#readme",
   "devDependencies": {
-    "happy-dom": "^20.0.11",
-    "http-server": "^14.1.1",
-    "vitest": "^4.0.15"
+    "jest": "^30.2.0"
   }
 }

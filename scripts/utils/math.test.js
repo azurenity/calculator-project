@@ -1,4 +1,3 @@
-import { it, expect } from "vitest";
 import { add, subtract, divide, multiply } from "./math.js";
 
 it("should add two numbers and return the correct sum", () => {
