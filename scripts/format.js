@@ -4,11 +4,11 @@ import { add, subtract, multiply, divide } from "./utils/math.js";
 export function validateNumber(currentNumber) {
   let displayNumber = "0";
   if (currentNumber.endsWith(".")) {
-    displayNumber = currentNumber;
+    displayNumber += currentNumber;
   } else if (currentNumber.startsWith("-")) {
     displayNumber = currentNumber;
   } else {
-    displayNumber = Math.round(currentNumber * 10) / 10; // if you want to not round/truncate to 1dp, remove this code and replace it with numberDisplay.innerHTML = currentNumber
+    displayNumber = String(Math.round(currentNumber * 10) / 10); // if you want to not round/truncate to 1dp, remove this code and replace it with numberDisplay.innerHTML = currentNumber
   }
   return displayNumber;
 }
