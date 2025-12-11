@@ -1,9 +1,15 @@
-import { numberPressedLogic, validateOperatorBtn, validateEqualBtn, formatCalculation, calculateResult } from "../format.js";
+import {
+  numberPressedLogic,
+  validateOperatorBtn,
+  validateEqualBtn,
+  formatCalculation,
+  calculateResult,
+} from "./format.js";
 import { showNumber, showDecimalError } from "./show-items.js";
-import { updateLog, showLog } from "../log.js";
+import { updateLog, showLog } from "./log.js";
 
 export function handleEqualBtnClick(variables) {
-  const newVariables = Object.assign(variables,validateEqualBtn(variables));
+  const newVariables = Object.assign(variables, validateEqualBtn(variables));
   if (!newVariables) {
     return;
   }
@@ -40,7 +46,6 @@ export function handleAllClearBtnClick() {
   return resetVariables;
 }
 
-// handle number btn click needs fixing
 export function handleNumberBtnClick(event, variables) {
   const newVariables = { ...variables };
   const numberPressed = event.currentTarget.innerHTML;

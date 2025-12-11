@@ -53,3 +53,5 @@ export const allClearButtonElement = document.querySelector(
 allClearButtonElement.addEventListener("click", () => {
   Object.assign(variables, handleAllClearBtnClick());
 });
+
+// if you want to test calculator.js, you will need to mock the buttons and then just test if .click() calls the function
