@@ -1,4 +1,4 @@
-import { validateNumber } from "../format.js";
+import { validateNumber } from "./format.js";
 export const numberDisplay = document.querySelector(".current-number-js");
 
 export function showNumber(currentNumber) {

@@ -1,5 +1,5 @@
-import { showNumber, showDivisionError } from "./utils/show-items.js";
-import { add, subtract, multiply, divide } from "./utils/math.js";
+import { showNumber, showDivisionError } from "./show-items.js";
+import { add, subtract, multiply, divide } from "./math.js";
 
 export function validateNumber(currentNumber) {
   let displayNumber = "0";

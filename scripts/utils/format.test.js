@@ -1,9 +1,8 @@
 import {jest} from '@jest/globals';
-import expect from 'expect';
 
 // idea for this code below:
 // it will mock the entire show-items.js module and return the two mock functions that does nothing -> since we dont need to actually test the showItems functions
-jest.unstable_mockModule('./utils/show-items.js', () => ({ // note that the path that you mock has to be the EXACT SAME as the one stated in format.js
+jest.unstable_mockModule('./show-items.js', () => ({ // note that the path that you mock has to be the EXACT SAME as the one stated in format.js
     showNumber: jest.fn(), // does nothing
     showDivisionError: jest.fn(secondNumber => {
       if (secondNumber === 0) {
@@ -161,5 +160,31 @@ describe("validateEqualBtn()", () => {
         }
         // the function should return the new object with the changed secondNumber
         expect(validateEqualBtn(dummyVariables).secondNumber).toBe(10)
+    })
+})
+
+describe("formatCalculation()", () => {
+    it('should return the correct calculation when provided all the correct inputs', () => {
+        let dummyVariables = {
+            firstNumber: 1,
+            secondNumber: 1,
+            currentNumber: '2',
+            ranOnce: false,
+            operator: "+"
+        }
+        // when you return; it will be returning undefined
+        expect(formatCalculation(dummyVariables)).toBe(`1 + 1 = 2`)
+    })
+    
+    it('should round off the terms when provided with 2dp numbers', () => {
+        let dummyVariables = {
+            firstNumber: 0.25,
+            secondNumber: 0.33,
+            currentNumber: '0.58',
+            ranOnce: false,
+            operator: "+"
+        }
+        
+        expect(formatCalculation(dummyVariables)).toBe(`0.3 + 0.3 = 0.6`)
     })
 })
