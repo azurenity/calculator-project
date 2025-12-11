@@ -4,7 +4,11 @@ import { add, subtract, multiply, divide } from "./math.js";
 export function validateNumber(currentNumber) {
   let displayNumber = "0";
   if (currentNumber.endsWith(".")) {
-    displayNumber += currentNumber;
+    if (currentNumber.length >= '2') {
+      displayNumber = currentNumber;
+    } else {
+      displayNumber += currentNumber;
+    }
   } else if (currentNumber.startsWith("-")) {
     displayNumber = currentNumber;
   } else {
