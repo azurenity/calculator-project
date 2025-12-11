@@ -1,21 +1,18 @@
-export function updateLog(log,firstNumber, operator, secondNumber, result) {
-  firstNumber = Math.round(firstNumber * 10) / 10;
-  secondNumber = Math.round(secondNumber * 10) / 10;
-  result = Math.round(result * 10) / 10;
-  const calculationToBeAdded = `${String(firstNumber)} ${operator} ${String(
-    secondNumber
-  )} = ${result}`;
+const log = [];
+
+export function updateLog(calculationToBeAdded) {
   if (log.length < 5) {
     log.unshift(calculationToBeAdded);
-} else {
+  } else {
     log.pop()
     log.unshift(calculationToBeAdded);
   }
-
+  
   return log;
 }
 
-export function showLog(log,logElement) {
+export function showLog() {
+  const logElement = document.querySelector(".log-js");
   let htmlContent = "<ul>";
 
   log.forEach((calculation) => {
@@ -27,3 +24,4 @@ export function showLog(log,logElement) {
 
   return htmlContent
 }
+
